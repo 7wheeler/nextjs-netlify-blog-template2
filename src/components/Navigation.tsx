@@ -3,7 +3,13 @@ import { useRouter } from "next/router";
 import Burger from "./Burger";
 import { useState } from "react";
 
-export default function Navigation() {
+interface Props {
+  chat: {
+    pathname: string;
+  };
+}
+
+export default function Navigation({ chat }: Props) {
   const router = useRouter();
   const [active, setActive] = useState(false);
   return (

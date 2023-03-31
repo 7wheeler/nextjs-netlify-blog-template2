@@ -19,7 +19,7 @@ export default function Navigation({ chat }: Props) {
         <ul>
 		  <li>
 			<Link href={chat.pathname}>
-            <a className={router.pathname === chat.pathname ? "active" : null}>chat</a>
+            <a className={router.pathname === chat.pathname ? "active" : null}>chat</a> 
             </Link>
 		  </li>
           <li>

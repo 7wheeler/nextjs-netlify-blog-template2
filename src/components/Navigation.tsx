@@ -17,15 +17,11 @@ export default function Navigation({ chat }: Props) {
       <Burger active={active} onClick={() => setActive(!active)} />
       <div className={"container " + (active ? "active" : "")}>
         <ul>
+		
           <li>
-            <Link href={"/" + chat.pathname}>
-              <a className={router.pathname === "/" + chat.pathname ? "active" : null}>chat</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a className={router.pathname === "/" ? "active" : null}>about</a>
-            </Link>
+		     <Link href={chat.pathname}>
+             <a className={router.pathname === chat.pathname ? "active" : null}>chat</a>
+             </Link>
           </li>
           <li>
             <Link href="/posts">

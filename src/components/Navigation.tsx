@@ -3,7 +3,13 @@ import { useRouter } from "next/router";
 import Burger from "./Burger";
 import { useState } from "react";
 
-export default function Navigation() {
+interface Props {
+  chat: {
+    pathname: string;
+  };
+}
+
+export default function Navigation({ chat }: Props) {
   const router = useRouter();
   const [active, setActive] = useState(false);
   return (
@@ -11,11 +17,11 @@ export default function Navigation() {
       <Burger active={active} onClick={() => setActive(!active)} />
       <div className={"container " + (active ? "active" : "")}>
         <ul>
-		  <li>
-			<Link href={"/" + chat.pathname}>
-			<a className={router.pathname === "/" + chat.pathname ? "active" : null}>chat</a>
-			</Link>
-		  </li>
+          <li>
+            <Link href={"/" + chat.pathname}>
+              <a className={router.pathname === "/" + chat.pathname ? "active" : null}>chat</a>
+            </Link>
+          </li>
           <li>
             <Link href="/">
               <a className={router.pathname === "/" ? "active" : null}>about</a>
@@ -23,13 +29,7 @@ export default function Navigation() {
           </li>
           <li>
             <Link href="/posts">
-              <a
-                className={
-                  router.pathname.startsWith("/posts") ? "active" : null
-                }
-              >
-                blog
-              </a>
+              <a className={router.pathname.startsWith("/posts") ? "active" : null}>blog</a>
             </Link>
           </li>
         </ul>

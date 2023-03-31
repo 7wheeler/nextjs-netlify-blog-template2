@@ -9,6 +9,7 @@ interface Props {
   };
 }
 
+
 export default function Navigation({ chat }: Props) {
   const router = useRouter();
   const [active, setActive] = useState(false);

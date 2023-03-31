@@ -15,7 +15,7 @@ export default function Layout({ children }: Props) {
         <meta name="theme-color" content="#fff" />
       </Head>
       <nav>
-		<Navigation chat={{ pathname: "chat" }} />
+       <Navigation chat={{ pathname: "chat" }} />
       </nav>
       <main>{children}</main>
       <style jsx>
